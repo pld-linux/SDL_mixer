@@ -1,13 +1,15 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Name:		SDL_mixer
-Version:	1.0.6
+Version:	1.1.0
 Release:	3
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://www.libsdl.org/projects/SDL_mixer/src/%{name}-%{version}.tar.gz
+Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/index.html
 BuildRequires:	esound-devel
 BuildRequires:	SDL-devel >= 1.1.1
@@ -47,6 +49,7 @@ Statis SDL_mixer libraries.
 
 %prep
 %setup -q 
+%patch -p1
 
 %build
 %configure
