@@ -2,7 +2,7 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Name:		SDL_mixer
 Version:	1.2.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -23,6 +23,7 @@ BuildRequires:	esound-devel
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libSDL_mixer1.2
 
 %define		_prefix		/usr/X11R6
 
@@ -51,6 +52,7 @@ Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 Requires:	libvorbis-devel
+Obsoletes:	libSDL_mixer1.2-devel
 
 %description devel
 Header files and more to develop SDL_mixer applications.
