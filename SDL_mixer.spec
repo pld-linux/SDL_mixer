@@ -3,7 +3,7 @@ Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.5
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -93,8 +93,8 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install playmus $RPM_BUILD_ROOT%{_bindir}
-install playwave $RPM_BUILD_ROOT%{_bindir}
+libtool install playmus $RPM_BUILD_ROOT%{_bindir}
+libtool install playwave $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
