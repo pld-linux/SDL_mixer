@@ -5,13 +5,6 @@ Version:	1.2.1
 Release:	3
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
@@ -42,13 +35,6 @@ MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
 Summary:	Header files and more to develop SDL_mixer applications
 Summary(pl):	Pliki nagЁСwkowe do rozwoju aplikacji u©ywaj╠cych SDL_mixer
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 Requires:	libvorbis-devel
@@ -64,13 +50,6 @@ Pliki nagЁСwkowe do rozwoju aplikacji u©ywaj╠cych SDL_mixer
 Summary:	Static SDL_mixer libraries
 Summary(pl):	Statyczne biblioteki SDL_mixer
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
