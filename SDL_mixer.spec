@@ -90,7 +90,8 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install playmus $RPM_BUILD_ROOT%{_bindir}
 install playwave $RPM_BUILD_ROOT%{_bindir}
