@@ -28,7 +28,7 @@ libraries.
 
 %description -l pl
 Prosty wielo-kana³owy mikser audio. Wspiera on 4 kana³y 16 bitowego
-dzwiêku stereo plus jeden kana³ dla muzyki miksowanej przez popularny
+d¼wiêku stereo plus jeden kana³ dla muzyki miksowanej przez popularny
 MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
 
 %description -l pt_BR
