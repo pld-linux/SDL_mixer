@@ -1,63 +1,79 @@
-%define name @PACKAGE@
-%define version @VERSION@
-%define release 1
-
-Summary: Simple DirectMedia Layer - Sample Mixer Library
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{name}-%{version}.tar.gz
-Copyright: LGPL
-Group: System Environment/Libraries
-BuildRoot: /var/tmp/%{name}-buildroot
-Prefix: %{_prefix}
+Summary:	Simple DirectMedia Layer - Sample Mixer Library
+Name:		SDL_mixer
+Version:	1.0.5
+Release:	1
+License:	LGPL
+Group:		Libraries
+Source0:	http://www.libsdl.org/projects/SDL_mixer/src/%{name}-%{version}.tar.gz
+URL:		http://www.libsdl.org/projects/SDL_mixer/index.html
+BuildRequires:	esound-devel
+BuildRequires:	SDL-devel >= 1.1.1
+BuildRequires:	XFree86-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Due to popular demand, here is a simple multi-channel audio mixer.
-It supports 4 channels of 16 bit stereo audio, plus a single channel
-of music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
+Due to popular demand, here is a simple multi-channel audio mixer. It
+supports 4 channels of 16 bit stereo audio, plus a single channel of
+music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
 %package devel
-Summary: Libraries, includes and more to develop SDL applications.
-Group: Development/Libraries
-Requires: %{name}
+Summary:	Header files and more to develop SDL_mixer applications
+Group:		Development/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+Requires:	SDL-devel
 
 %description devel
-Due to popular demand, here is a simple multi-channel audio mixer.
-It supports 4 channels of 16 bit stereo audio, plus a single channel
-of music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
-libraries.
+Header files and more to develop SDL_mixer applications.
+
+%package static
+Summary:	Statis SDL_mixer libraries
+Group:		Development/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
+
+%description static
+Statis SDL_mixer libraries.
 
 %prep
-%setup 
+%setup -q 
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{prefix}
-make
+LDFLAGS="-s"; export LDFLAGS
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT/%{prefix}
+
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+
+gzip -9nf README CHANGES
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc README CHANGES COPYING
-%{prefix}/bin/playmus
-%{prefix}/bin/playwave
-%{prefix}/lib/lib*.so.*
-%{prefix}/lib/lib*.so
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/playmus
+%attr(755,root,root) %{_bindir}/playwave
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
-%defattr(-,root,root)
-%{prefix}/lib/*a
-%{prefix}/include/SDL/
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/SDL/*
 
-%changelog
-* Wed Jan 19 2000 Sam Lantinga 
-- converted to get package information from configure
-* Sun Jan 16 2000 Hakan Tandogan <hakan@iconsult.com>
-- initial spec file
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
