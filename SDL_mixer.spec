@@ -13,7 +13,7 @@ Source0:	http://www.libsdl.org/projects/SDL_mixer/src/%{name}-%{version}.tar.gz
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/index.html
 BuildRequires:	esound-devel
-BuildRequires:	SDL-devel >= 1.1.1
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
