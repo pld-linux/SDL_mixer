@@ -1,9 +1,12 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Name:		SDL_mixer
 Version:	1.0.6
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
+Group(de):	Libraries
+Group(fr):	Librairies
+Group(pl):	Biblioteki
 Source0:	http://www.libsdl.org/projects/SDL_mixer/src/%{name}-%{version}.tar.gz
 URL:		http://www.libsdl.org/projects/SDL_mixer/index.html
 BuildRequires:	esound-devel
@@ -20,6 +23,7 @@ libraries.
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -31,6 +35,7 @@ Header files and more to develop SDL_mixer applications.
 %package static
 Summary:	Statis SDL_mixer libraries
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -42,7 +47,6 @@ Statis SDL_mixer libraries.
 %setup -q 
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
@@ -50,8 +54,6 @@ LDFLAGS="-s"; export LDFLAGS
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf README CHANGES
 
