@@ -3,7 +3,7 @@ Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.4
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -14,7 +14,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel
+BuildRequires:	libvorbis-devel >= 2:1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_mixer1.2
 
