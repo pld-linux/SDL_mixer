@@ -2,8 +2,8 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.4
-Release:	7
+Version:	1.2.5
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -85,8 +85,12 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_bindir}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+install playmus $RPM_BUILD_ROOT%{_bindir}
+install playwave $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
