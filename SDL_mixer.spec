@@ -2,7 +2,7 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Name:		SDL_mixer
 Version:	1.2.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -12,9 +12,12 @@ Group(pl):	Biblioteki
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
-BuildRequires:	esound-devel
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	esound-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -66,6 +69,11 @@ Statyczne biblioteki SDL_mixer.
 %patch -p1
 
 %build
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
 %configure
 %{__make}
 
