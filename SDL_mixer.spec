@@ -3,13 +3,13 @@ Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.4
-Release:	6
+Release:	7
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
-BuildRequires:	SDL-devel >= 1.2.0
+BuildRequires:	SDL-devel >= 1.2.5-2
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -17,8 +17,6 @@ BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_mixer1.2
-
-%define		_prefix		/usr/X11R6
 
 %description
 Due to popular demand, here is a simple multi-channel audio mixer. It
@@ -77,11 +75,11 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %patch -p1
 
 %build
-rm -f missing
-%{__libtoolize}
-%{__aclocal}
+#rm -f missing
+#%{__libtoolize}
+#%{__aclocal}
 %{__autoconf}
-%{__automake}
+#%{__automake}
 %configure
 %{__make}
 
