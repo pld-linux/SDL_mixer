@@ -1,7 +1,7 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Name:		SDL_mixer
 Version:	1.0.6
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -13,6 +13,8 @@ BuildRequires:	esound-devel
 BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
 
 %description
 Due to popular demand, here is a simple multi-channel audio mixer. It
