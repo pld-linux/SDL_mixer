@@ -15,6 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.0
+BuildRequires:	smpeg-devel >= 0.4.4-11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_mixer1.2
 
