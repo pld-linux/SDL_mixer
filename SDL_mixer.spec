@@ -1,5 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
+Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.3
 Release:	1
@@ -26,14 +27,26 @@ supports 4 channels of 16 bit stereo audio, plus a single channel of
 music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
+%description -l es
+Due to popular demand, here is a simple multi-channel audio mixer. It
+supports 4 channels of 16 bit stereo audio, plus a single channel of
+music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
+libraries.
+
 %description -l pl
 Prosty wielo-kana³owy mikser audio. Wspiera on 4 kana³y 16 bitowego
 dzwiêku stereo plus jeden kana³ dla muzyki miksowanej przez popularny
 MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
 
+%description -l pt_BR
+Biblioteca que suporta 4 canais de áudio estéreo 16 bit, mais um canal
+de música, mixado pelo populares bibliotecas MOD MikMod, MIDI timidity
+e SMPEG MP3.
+
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
 Summary(pl):	Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
@@ -43,23 +56,37 @@ Obsoletes:	libSDL_mixer1.2-devel
 %description devel
 Header files and more to develop SDL_mixer applications.
 
-%description -l pl devel
+%description devel -l es
+Due to popular demand, here is a simple multi-channel audio mixer. It
+supports 4 channels of 16 bit stereo audio, plus a single channel of
+music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
+libraries.
+
+%description devel -l pt_BR
+Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
+SDL.
+
+%description devel -l pl
 Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 
 %package static
 Summary:	Static SDL_mixer libraries
 Summary(pl):	Statyczne biblioteki SDL_mixer
+Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com SDL_mixer
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
 Static SDL_mixer libraries.
 
-%description -l pl static
+%description static -l pl
 Statyczne biblioteki SDL_mixer.
 
+%description static -l pt_BR
+Bibliotecas estáticas para desenvolvimento com SDL_mixer.
+
 %prep
-%setup -q 
+%setup -q
 %patch -p1
 
 %build
