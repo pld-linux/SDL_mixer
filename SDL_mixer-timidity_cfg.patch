@@ -1,0 +1,17 @@
+diff -Nru SDL_mixer-1.1.0/timidity/config.h SDL_mixer-1.1.0.new/timidity/config.h
+--- SDL_mixer-1.1.0/timidity/config.h	Tue Feb  6 09:29:33 2001
++++ SDL_mixer-1.1.0.new/timidity/config.h	Tue Feb  6 09:32:54 2001
+@@ -202,11 +202,11 @@
+ 
+ /* You could specify a complete path, e.g. "/etc/timidity.cfg", and
+    then specify the library directory in the configuration file. */
+-#define CONFIG_FILE	"timidity.cfg"
++#define CONFIG_FILE	"/etc/timidity.cfg"
+ #ifdef __WIN32__
+ #define DEFAULT_PATH	"\\TIMIDITY"
+ #else
+-#define DEFAULT_PATH	"/usr/local/lib/timidity"
++#define DEFAULT_PATH	"/usr/share/timidity"
+ #endif
+ 
+ /* These affect general volume */
