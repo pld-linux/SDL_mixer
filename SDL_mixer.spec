@@ -91,7 +91,7 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
