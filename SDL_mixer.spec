@@ -43,6 +43,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 Requires:	libvorbis-devel
+Requires:	smpeg-devel
 Obsoletes:	libSDL_mixer1.2-devel
 
 %description devel
