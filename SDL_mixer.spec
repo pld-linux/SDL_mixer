@@ -14,7 +14,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel >= 2:1.0
+BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_mixer1.2
 
