@@ -2,8 +2,8 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.3
-Release:	2
+Version:	1.2.4
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -22,12 +22,6 @@ Obsoletes:	libSDL_mixer1.2
 %define		_prefix		/usr/X11R6
 
 %description
-Due to popular demand, here is a simple multi-channel audio mixer. It
-supports 4 channels of 16 bit stereo audio, plus a single channel of
-music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
-libraries.
-
-%description -l es
 Due to popular demand, here is a simple multi-channel audio mixer. It
 supports 4 channels of 16 bit stereo audio, plus a single channel of
 music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
@@ -56,18 +50,12 @@ Obsoletes:	libSDL_mixer1.2-devel
 %description devel
 Header files and more to develop SDL_mixer applications.
 
-%description devel -l es
-Due to popular demand, here is a simple multi-channel audio mixer. It
-supports 4 channels of 16 bit stereo audio, plus a single channel of
-music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
-libraries.
+%description devel -l pl
+Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 
 %description devel -l pt_BR
 Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
 SDL.
-
-%description devel -l pl
-Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 
 %package static
 Summary:	Static SDL_mixer libraries
@@ -103,8 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README CHANGES
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -113,13 +99,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README CHANGES
 %attr(755,root,root) %{_bindir}/playmus
 %attr(755,root,root) %{_bindir}/playwave
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc {README,CHANGES}.gz
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/SDL/*
