@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.5
-Release:	2
+Version:	1.2.6
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
-# Source0-md5:	f26d4e4625f00517203e32bd06fbc5d8
+# Source0-md5:	2b8beffad9179d80e598c22c80efb135
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
 BuildRequires:	SDL-devel >= 1.2.5-2
@@ -17,8 +17,8 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	smpeg-devel >= 0.4.4-11
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_mixer1.2
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Due to popular demand, here is a simple multi-channel audio mixer. It
@@ -42,9 +42,9 @@ Summary(pl):	Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	SDL-devel
-Requires:	libvorbis-devel
-Requires:	smpeg-devel
+Requires:	SDL-devel >= 1.2.5-2
+Requires:	libvorbis-devel >= 1:1.0
+Requires:	smpeg-devel >= 0.4.4-11
 Obsoletes:	libSDL_mixer1.2-devel
 
 %description devel
@@ -78,7 +78,7 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %patch -p1
 
 %build
-rm -f missing aclocal.m4 acinclude.m4
+rm -f acinclude.m4
 %{__libtoolize}
 %{__aclocal}
 %{__automake}
