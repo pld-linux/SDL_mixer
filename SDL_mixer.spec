@@ -83,7 +83,9 @@ rm -f acinclude.m4
 %{__aclocal}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--disable-music-libmikmod \
+	--enable-music-mod
 %{__make}
 
 %install
