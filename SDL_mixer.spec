@@ -1,7 +1,8 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
+Summary(pl):	Prosta biblioteka miksera
 Name:		SDL_mixer
 Version:	1.1.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -24,8 +25,14 @@ supports 4 channels of 16 bit stereo audio, plus a single channel of
 music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
+%description -l pl
+Prosty wielo-kana³owy mikser audio. Wspiera on 4 kana³y 16 bitowego
+dzwiêku stereo plus jeden kana³ dla muzyki miksowanej przez popularny
+MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
+
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
+Summary(pl):	Pliki nag³owkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
@@ -36,8 +43,12 @@ Requires:	SDL-devel
 %description devel
 Header files and more to develop SDL_mixer applications.
 
+%description -l pl devel
+Pliki nag³owkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
+
 %package static
-Summary:	Statis SDL_mixer libraries
+Summary:	Static SDL_mixer libraries
+Summary(pl):	Statyczne biblioteki SDL_mixer
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
@@ -46,6 +57,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Statis SDL_mixer libraries.
+
+%description -l pl static
+Statyczne biblioteki SDL_mixer.
 
 %prep
 %setup -q 
