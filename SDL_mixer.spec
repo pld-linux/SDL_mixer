@@ -41,7 +41,7 @@ Summary:	Header files and more to develop SDL_mixer applications
 Summary(pl):	Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel
 Requires:	libvorbis-devel
 Requires:	smpeg-devel
@@ -62,7 +62,7 @@ Summary:	Static SDL_mixer libraries
 Summary(pl):	Statyczne biblioteki SDL_mixer
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com SDL_mixer
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static SDL_mixer libraries.
