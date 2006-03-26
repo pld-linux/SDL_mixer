@@ -3,7 +3,7 @@ Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.6
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -11,7 +11,6 @@ Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar
 Patch0:		%{name}-timidity_cfg.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
 BuildRequires:	SDL-devel >= 1.2.5-2
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
