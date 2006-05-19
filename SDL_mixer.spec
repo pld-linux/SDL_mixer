@@ -2,20 +2,22 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl):	Prosta biblioteka miksera
 Summary(pt_BR):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.6
-Release:	3
+Version:	1.2.7
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
-# Source0-md5:	2b8beffad9179d80e598c22c80efb135
+# Source0-md5:	7959b89c8f8f1564ca90968f6c88fa1e
 Patch0:		%{name}-timidity_cfg.patch
+Patch1:		%{name}-acfix.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
-BuildRequires:	SDL-devel >= 1.2.5-2
+BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	smpeg-devel >= 0.4.4-11
+Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_mixer1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,9 +43,7 @@ Summary(pl):	Pliki nag³ówkowe do rozwoju aplikacji u¿ywaj±cych SDL_mixer
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	SDL-devel >= 1.2.5-2
-Requires:	libvorbis-devel >= 1:1.0
-Requires:	smpeg-devel >= 0.4.4-11
+Requires:	SDL-devel >= 1.2.10
 Obsoletes:	libSDL_mixer1.2-devel
 
 %description devel
@@ -74,15 +74,17 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 rm -f acinclude.m4
 %{__libtoolize}
 %{__aclocal}
-%{__automake}
 %{__autoconf}
 %configure \
+	ogg_lib=libvorbisfile.so.3 \
+	smpeg_lib=libsmpeg-0.4.so.0 \
 	--disable-music-libmikmod \
 	--enable-music-mod
 %{__make}
@@ -91,11 +93,8 @@ rm -f acinclude.m4
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-%{__make} install \
+%{__make} install install-bin \
 	DESTDIR=$RPM_BUILD_ROOT
-
-libtool install playmus $RPM_BUILD_ROOT%{_bindir}
-libtool install playwave $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
