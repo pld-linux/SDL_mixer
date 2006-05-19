@@ -1,13 +1,7 @@
-diff -Nru SDL_mixer-1.1.0/timidity/config.h SDL_mixer-1.1.0.new/timidity/config.h
---- SDL_mixer-1.1.0/timidity/config.h	Tue Feb  6 09:29:33 2001
-+++ SDL_mixer-1.1.0.new/timidity/config.h	Tue Feb  6 09:32:54 2001
-@@ -202,11 +202,11 @@
- 
- /* You could specify a complete path, e.g. "/etc/timidity.cfg", and
-    then specify the library directory in the configuration file. */
--#define CONFIG_FILE	"timidity.cfg"
-+#define CONFIG_FILE	"/etc/timidity.cfg"
- #ifdef __WIN32__
+--- SDL_mixer-1.2.7/timidity/config.h.orig	2006-05-01 09:25:52.000000000 +0200
++++ SDL_mixer-1.2.7/timidity/config.h	2006-05-20 01:17:40.326795750 +0200
+@@ -176,7 +176,7 @@
+ #if defined(__WIN32__) || defined(__OS2__)
  #define DEFAULT_PATH	"\\TIMIDITY"
  #else
 -#define DEFAULT_PATH	"/usr/local/lib/timidity"
@@ -15,3 +9,19 @@ diff -Nru SDL_mixer-1.1.0/timidity/config.h SDL_mixer-1.1.0.new/timidity/config.
  #endif
  
  /* These affect general volume */
+--- SDL_mixer-1.2.7/timidity/timidity.c.orig	2006-05-14 21:54:25.000000000 +0200
++++ SDL_mixer-1.2.7/timidity/timidity.c	2006-05-20 01:21:52.074529000 +0200
+@@ -294,13 +294,11 @@
+ 
+ int Timidity_Init(int rate, int format, int channels, int samples)
+ {
+-  if (read_config_file(CONFIG_FILE)<0) {
+     if (read_config_file(CONFIG_FILE_ETC)<0) {
+       if (read_config_file(CONFIG_FILE_ETC_TIMIDITY)<0) {
+         return(-1);
+       }
+     }
+-  }
+ 
+   if (channels < 1 || channels == 3 || channels == 5 || channels > 6) return(-1);
+ 
