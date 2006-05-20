@@ -77,8 +77,9 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %patch0 -p1
 %patch1 -p1
 
-%build
 rm -f acinclude.m4
+
+%build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
