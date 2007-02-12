@@ -1,6 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
-Summary(pl.UTF-8):   Prosta biblioteka miksera
-Summary(pt_BR.UTF-8):   SDL - Biblioteca para mixagem
+Summary(pl.UTF-8):	Prosta biblioteka miksera
+Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.7
 Release:	1
@@ -39,8 +39,8 @@ e SMPEG MP3.
 
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
-Summary(pl.UTF-8):   Pliki nagłówkowe do rozwoju aplikacji używających SDL_mixer
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
+Summary(pl.UTF-8):	Pliki nagłówkowe do rozwoju aplikacji używających SDL_mixer
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.10
@@ -58,8 +58,8 @@ SDL.
 
 %package static
 Summary:	Static SDL_mixer libraries
-Summary(pl.UTF-8):   Statyczne biblioteki SDL_mixer
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com SDL_mixer
+Summary(pl.UTF-8):	Statyczne biblioteki SDL_mixer
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com SDL_mixer
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
