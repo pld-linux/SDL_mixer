@@ -1,6 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
-Summary(pl):	Prosta biblioteka miksera
-Summary(pt_BR):	SDL - Biblioteca para mixagem
+Summary(pl.UTF-8):   Prosta biblioteka miksera
+Summary(pt_BR.UTF-8):   SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.7
 Release:	1
@@ -27,20 +27,20 @@ supports 4 channels of 16 bit stereo audio, plus a single channel of
 music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
-%description -l pl
-Prosty wielo-kana≥owy mikser audio. Wspiera on 4 kana≥y 16 bitowego
-dºwiÍku stereo plus jeden kana≥ dla muzyki miksowanej przez popularny
+%description -l pl.UTF-8
+Prosty wielo-kana≈Çowy mikser audio. Wspiera on 4 kana≈Çy 16 bitowego
+d≈∫wiƒôku stereo plus jeden kana≈Ç dla muzyki miksowanej przez popularny
 MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
 
-%description -l pt_BR
-Biblioteca que suporta 4 canais de ·udio estÈreo 16 bit, mais um canal
-de m˙sica, mixado pelo populares bibliotecas MOD MikMod, MIDI timidity
+%description -l pt_BR.UTF-8
+Biblioteca que suporta 4 canais de √°udio est√©reo 16 bit, mais um canal
+de m√∫sica, mixado pelo populares bibliotecas MOD MikMod, MIDI timidity
 e SMPEG MP3.
 
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
-Summary(pl):	Pliki nag≥Ûwkowe do rozwoju aplikacji uøywaj±cych SDL_mixer
-Summary(pt_BR):	Bibliotecas e arquivos de inclus„o para desenvolvimento de aplicaÁıes SDL
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do rozwoju aplikacji u≈ºywajƒÖcych SDL_mixer
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclus√£o para desenvolvimento de aplica√ß√µes SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.10
@@ -49,28 +49,28 @@ Obsoletes:	libSDL_mixer1.2-devel
 %description devel
 Header files and more to develop SDL_mixer applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do rozwoju aplikacji uøywaj±cych SDL_mixer
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do rozwoju aplikacji u≈ºywajƒÖcych SDL_mixer
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclus„o para desenvolvimento de aplicaÁıes
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclus√£o para desenvolvimento de aplica√ß√µes
 SDL.
 
 %package static
 Summary:	Static SDL_mixer libraries
-Summary(pl):	Statyczne biblioteki SDL_mixer
-Summary(pt_BR):	Bibliotecas est·ticas para desenvolvimento com SDL_mixer
+Summary(pl.UTF-8):   Statyczne biblioteki SDL_mixer
+Summary(pt_BR.UTF-8):   Bibliotecas est√°ticas para desenvolvimento com SDL_mixer
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static SDL_mixer libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki SDL_mixer.
 
-%description static -l pt_BR
-Bibliotecas est·ticas para desenvolvimento com SDL_mixer.
+%description static -l pt_BR.UTF-8
+Bibliotecas est√°ticas para desenvolvimento com SDL_mixer.
 
 %prep
 %setup -q
