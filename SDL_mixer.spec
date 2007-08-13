@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl.UTF-8):	Prosta biblioteka miksera
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.7
+Version:	1.2.8
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
-# Source0-md5:	7959b89c8f8f1564ca90968f6c88fa1e
+# Source0-md5:	0b5b91015d0f3bd9597e094ba67c4d65
 Patch0:		%{name}-timidity_cfg.patch
 Patch1:		%{name}-acfix.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
@@ -92,7 +92,6 @@ rm -f acinclude.m4
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
 
 %{__make} install install-bin \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -105,17 +104,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README CHANGES
+%doc CHANGES README
 %attr(755,root,root) %{_bindir}/playmus
 %attr(755,root,root) %{_bindir}/playwave
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libSDL_mixer-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/SDL/*
+%attr(755,root,root) %{_libdir}/libSDL_mixer.so
+%{_libdir}/libSDL_mixer.la
+%{_includedir}/SDL/SDL_mixer.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libSDL_mixer.a
