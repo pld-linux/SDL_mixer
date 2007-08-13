@@ -28,9 +28,9 @@ music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
 %description -l pl.UTF-8
-Prosty wielo-kanałowy mikser audio. Wspiera on 4 kanały 16 bitowego
-dźwięku stereo plus jeden kanał dla muzyki miksowanej przez popularny
-MikMod MOD, Timitity MIDI i biblioteki SMPEG MP3.
+SDL_mixer to prosty wielokanałowy mikser audio. Obsługuje 4 kanały
+16-bitowego dźwięku stereo plus jeden kanał dla muzyki miksowanej
+przez popularne biblioteki MikMod MOD, Timitity MIDI i SMPEG MP3.
 
 %description -l pt_BR.UTF-8
 Biblioteca que suporta 4 canais de áudio estéreo 16 bit, mais um canal
