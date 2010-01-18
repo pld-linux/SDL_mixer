@@ -107,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/playmus
 %attr(755,root,root) %{_bindir}/playwave
 %attr(755,root,root) %{_libdir}/libSDL_mixer-*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libSDL_mixer-1.2.so.0
 
 %files devel
 %defattr(644,root,root,755)
