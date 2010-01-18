@@ -6,6 +6,6 @@
  dnl Detect the canonical build and host environments
 -AC_CONFIG_AUX_DIRS($srcdir/build-scripts)
 +AC_CONFIG_AUX_DIR([build-scripts])
- AC_CANONICAL_HOST
+ dnl AC_CANONICAL_HOST
  
- dnl Set up the compiler and linker flags
+ dnl Check for tools
