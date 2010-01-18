@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl.UTF-8):	Prosta biblioteka miksera
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.8
-Release:	2
+Version:	1.2.11
+Release:	0.1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
-# Source0-md5:	0b5b91015d0f3bd9597e094ba67c4d65
+# Source0-md5:	65ada3d997fe85109191a5fb083f248c
 Patch0:		%{name}-timidity_cfg.patch
 Patch1:		%{name}-acfix.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
