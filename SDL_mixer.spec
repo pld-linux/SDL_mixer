@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Prosta biblioteka miksera
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.11
-Release:	0.1
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
@@ -86,7 +86,6 @@ rm -f acinclude.m4
 %configure \
 	ogg_lib=libvorbisfile.so.3 \
 	smpeg_lib=libsmpeg-0.4.so.0 \
-	--disable-music-libmikmod \
 	--enable-music-mod
 %{__make}
 
@@ -114,6 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libSDL_mixer.so
 %{_libdir}/libSDL_mixer.la
 %{_includedir}/SDL/SDL_mixer.h
+%{_pkgconfigdir}/SDL_mixer.pc
 
 %files static
 %defattr(644,root,root,755)
