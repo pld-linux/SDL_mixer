@@ -14,12 +14,20 @@ URL:		http://www.libsdl.org/projects/SDL_mixer/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	flac-devel >= 1.2.0
+BuildRequires:	libtool >= 2:2.0
+BuildRequires:	libmikmod-devel >= 3.1.10
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	smpeg-devel >= 0.4.4-11
 Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_mixer1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# NOTE: libraries dlopened by sonames detected at build time:
+# libFLAC.so.8
+# libmikmod.so.2
+# libsmpeg-0.4.so.0
+# libvorbisfile.so.3
 
 %description
 Due to popular demand, here is a simple multi-channel audio mixer. It
@@ -77,16 +85,11 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %patch0 -p1
 %patch1 -p1
 
-rm -f acinclude.m4
-
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-%configure \
-	ogg_lib=libvorbisfile.so.3 \
-	smpeg_lib=libsmpeg-0.4.so.0 \
-	--enable-music-mod
+%configure
 %{__make}
 
 %install
