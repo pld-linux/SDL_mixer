@@ -1,13 +1,17 @@
+#
+# Conditional build:
+%bcond_with	modplug	# use modplug for MOD support (mikmod is used by default)
+#
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl.UTF-8):	Prosta biblioteka miksera
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
-Version:	1.2.11
+Version:	1.2.12
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
-# Source0-md5:	65ada3d997fe85109191a5fb083f248c
+# Source0-md5:	e03ff73d77a55e3572ad0217131dc4a1
 Patch0:		%{name}-timidity_cfg.patch
 Patch1:		%{name}-acfix.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/
@@ -15,8 +19,10 @@ BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.2.0
+BuildRequires:	fluidsynth-devel
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libmikmod-devel >= 3.1.10
+%{?with_modplug:BuildRequires:	libmodplug-devel >= 0.8.7}
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	smpeg-devel >= 0.4.4-11
 Requires:	SDL >= 1.2.10
@@ -25,6 +31,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # NOTE: libraries dlopened by sonames detected at build time:
 # libFLAC.so.8
+# libfluidsynth.so.1
 # libmikmod.so.2
 # libsmpeg-0.4.so.0
 # libvorbisfile.so.3
@@ -89,7 +96,9 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-%configure
+%configure \
+	--enable-music-fluidsynth-midi \
+	%{?with_modplug:--enable-music-mod-modplug}
 %{__make}
 
 %install
@@ -109,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES README
 %attr(755,root,root) %{_bindir}/playmus
 %attr(755,root,root) %{_bindir}/playwave
-%attr(755,root,root) %{_libdir}/libSDL_mixer-*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libSDL_mixer-1.2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libSDL_mixer-1.2.so.0
 
 %files devel
