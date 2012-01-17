@@ -8,7 +8,7 @@ Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.12
 Release:	1
-License:	LGPL v2+
+License:	Zlib-like
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
 # Source0-md5:	e03ff73d77a55e3572ad0217131dc4a1
@@ -115,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README
+%doc CHANGES COPYING README
 %attr(755,root,root) %{_bindir}/playmus
 %attr(755,root,root) %{_bindir}/playwave
 %attr(755,root,root) %{_libdir}/libSDL_mixer-1.2.so.*.*.*
