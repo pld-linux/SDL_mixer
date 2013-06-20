@@ -72,17 +72,17 @@ Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
 SDL.
 
 %package static
-Summary:	Static SDL_mixer libraries
-Summary(pl.UTF-8):	Statyczne biblioteki SDL_mixer
+Summary:	Static SDL_mixer library
+Summary(pl.UTF-8):	Statyczna biblioteka SDL_mixer
 Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com SDL_mixer
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static SDL_mixer libraries.
+Static SDL_mixer library.
 
 %description static -l pl.UTF-8
-Statyczne biblioteki SDL_mixer.
+Statyczna biblioteka SDL_mixer.
 
 %description static -l pt_BR.UTF-8
 Bibliotecas estáticas para desenvolvimento com SDL_mixer.
