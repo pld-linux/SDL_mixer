@@ -2,6 +2,13 @@
 # Conditional build:
 %bcond_with	modplug	# use modplug for MOD support (mikmod is used by default)
 #
+# NOTE: libraries dlopened by sonames detected at build time:
+# libFLAC.so.8
+# libfluidsynth.so.1
+# libmikmod.so.2
+# libsmpeg-0.4.so.0
+# libvorbisfile.so.3
+#
 Summary:	Simple DirectMedia Layer - Sample Mixer Library
 Summary(pl.UTF-8):	Simple DirectMedia Layer - biblioteka miksująca próbki dźwiękowe
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
@@ -14,7 +21,7 @@ Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar
 # Source0-md5:	e03ff73d77a55e3572ad0217131dc4a1
 Patch0:		%{name}-timidity_cfg.patch
 Patch1:		%{name}-acfix.patch
-URL:		http://www.libsdl.org/projects/SDL_mixer/
+URL:		http://www.libsdl.org/projects/SDL_mixer/release-1.2.html
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,15 +33,9 @@ BuildRequires:	libmikmod-devel >= 3.1.10
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	smpeg-devel >= 0.4.4-11
 Requires:	SDL >= 1.2.10
+%{?with_modplug:Suggests:	libmodplug >= 0.8.7}
 Obsoletes:	libSDL_mixer1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# NOTE: libraries dlopened by sonames detected at build time:
-# libFLAC.so.8
-# libfluidsynth.so.1
-# libmikmod.so.2
-# libsmpeg-0.4.so.0
-# libvorbisfile.so.3
 
 %description
 Due to popular demand, here is a simple multi-channel audio mixer. It
@@ -54,7 +55,7 @@ e SMPEG MP3.
 
 %package devel
 Summary:	Header files and more to develop SDL_mixer applications
-Summary(pl.UTF-8):	Pliki nagłówkowe do rozwoju aplikacji używających SDL_mixer
+Summary(pl.UTF-8):	Pliki nagłówkowe do rozwoju aplikacji używających biblioteki SDL_mixer
 Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -65,7 +66,8 @@ Obsoletes:	libSDL_mixer1.2-devel
 Header files and more to develop SDL_mixer applications.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe do rozwoju aplikacji używających SDL_mixer
+Pliki nagłówkowe do rozwoju aplikacji używających biblioteki
+SDL_mixer.
 
 %description devel -l pt_BR.UTF-8
 Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
@@ -97,7 +99,6 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %{__aclocal}
 %{__autoconf}
 %configure \
-	--enable-music-fluidsynth-midi \
 	%{?with_modplug:--enable-music-mod-modplug}
 %{__make}
 
