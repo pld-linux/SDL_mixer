@@ -14,7 +14,7 @@ Summary(pl.UTF-8):	Simple DirectMedia Layer - biblioteka miksująca próbki dźw
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.12
-Release:	2
+Release:	3
 License:	Zlib-like
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
