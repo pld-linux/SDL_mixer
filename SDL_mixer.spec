@@ -14,13 +14,14 @@ Summary(pl.UTF-8):	Simple DirectMedia Layer - biblioteka miksująca próbki dźw
 Summary(pt_BR.UTF-8):	SDL - Biblioteca para mixagem
 Name:		SDL_mixer
 Version:	1.2.12
-Release:	3
+Release:	4
 License:	Zlib-like
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_mixer/release/%{name}-%{version}.tar.gz
 # Source0-md5:	e03ff73d77a55e3572ad0217131dc4a1
 Patch0:		%{name}-timidity_cfg.patch
 Patch1:		%{name}-acfix.patch
+Patch2:		%{name}-link.patch
 URL:		http://www.libsdl.org/projects/SDL_mixer/release-1.2.html
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
@@ -93,6 +94,7 @@ Bibliotecas estáticas para desenvolvimento com SDL_mixer.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -107,6 +109,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install install-bin \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libSDL_mixer.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -125,7 +130,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libSDL_mixer.so
-%{_libdir}/libSDL_mixer.la
 %{_includedir}/SDL/SDL_mixer.h
 %{_pkgconfigdir}/SDL_mixer.pc
 
