@@ -1,0 +1,10 @@
+--- mixer.c.orig	2026-05-08 12:35:06.132697811 +0200
++++ mixer.c	2026-05-08 12:35:06.195495337 +0200
+@@ -38,6 +38,7 @@
+ #include "dynamic_mod.h"
+ #include "dynamic_mp3.h"
+ #include "dynamic_ogg.h"
++#include "dynamic_fluidsynth.h"
+ 
+ #define __MIX_INTERNAL_EFFECT__
+ #include "effects_internal.h"
